@@ -1,0 +1,37 @@
+ <div class=" content">
+  <div class=" row">
+    <div class=" col-md-12">
+      <div class=" card">
+        <div class=" card-header mb-5">
+          <h5 class=" card-category">Linii Productie</h5>
+          <h3 class=" card-title">Lista liniilor de productie</h3>
+        </div>
+        <div class=" card-body">
+          <div class=" table-responsive">
+            <table class=" table tablesorter" id="">
+              <thead class=" text-primary">
+                <tr>
+                  <th>Line ID</th>
+                </tr>
+              </thead>
+              <ng-container *ngIf="lines.length; else noLines">
+                <tbody>
+                  <tr *ngFor="let line of lines">
+                    <td>{{ line.line_id }}</td>
+                  </tr>
+                </tbody>
+              </ng-container>
+              <ng-template #noLines>
+                <tbody>
+                  <tr>
+                    <td rowspan="2">No lines available</td>
+                  </tr>
+                </tbody>
+              </ng-template>
+                
+            </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
